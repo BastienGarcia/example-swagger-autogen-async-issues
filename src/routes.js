@@ -25,6 +25,9 @@ const createRouter = async () => {
     // Await in var
     const routes =     await    apiV2;
     router.use('/var', routes);
+    // Var ending with await (routes should be /signin or /users/:id)
+    const apiV2await = require('./controllers/ApiRoute1');
+    router.use('/var/endWithAwait', apiV2await );
     // Awaited promise
     const awaited = await require('./controllers/ApiRoute2');
     router.use('/awaited', awaited);

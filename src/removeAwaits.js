@@ -42,7 +42,7 @@ function removeAwaits(data) {
                 continue;
             }
             // Remove await keyword
-            if (data.slice(idx, idx + 6) === 'await ') {
+            if (data.slice(idx, idx + 6) === 'await ' && idx > 0 && data[idx - 1].split(new RegExp("([a-z]|[A-Z]|[0-9]|_|$)")).length === 1) {
                 data = data.slice(0, idx) + data.slice(idx + 6);
                 idx -= 1;
                 continue;
